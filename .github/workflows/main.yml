@@ -21,5 +21,4 @@ jobs:
         password: ${{ secrets.password }}
         protocol: ftps
         port: 21
-        local-dir: activities/DYNAMIC/  
         server-dir: htdocs/  
