@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+include 'connect.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +22,6 @@
     </head>
 
     <body>
-        <div id="login-signUp">
-        </div>
 
         <div id="pop-up-container">
             <div id="pop-up">
