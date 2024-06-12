@@ -1,6 +1,6 @@
 <?php
 
-$host = "sql111.infinityfree.com";
+$host = "sql304.infinityfree.com";
 $user = "if0_36714566";
 $pass = "c4p8uNAYpxev";
 $db = "if0_36714566_pectosdb";
