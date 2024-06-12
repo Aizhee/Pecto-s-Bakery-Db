@@ -11,13 +11,13 @@ if(isset($_POST['signUpBtn'])){
     $Password = $_POST['createPassword'];
     $Password = md5($Password);
 
-    $chechEmail = "SELECT from users where email = '$Email'";
+    $chechEmail = "SELECT from user_table where email_adress = '$Email'";
     $results = $conn->query($checkEmail);
 
     if($results->num_rows>0){
         echo "Email address already exists!";
     }else{
-        $insertQuery = "INSERT INTO users(FirstName, LastName, Username, Email, Password)
+        $insertQuery = "INSERT INTO user_table(first_name, surname, username, email_adress, password)
                         VALUES ('$FirstName', '$LirstName', '$Username', '$Email', '$Password'";
 
             if($conn->$insertQuery==TRUE){
@@ -33,7 +33,7 @@ if(isset($_POST['loginBtn'])){
     $Password = $_POST['createPassword'];
     $Password = md5($Password);
 
-    $sql = "SELECT from users WHERE email = '$Email' and password='$Password'";
+    $sql = "SELECT from user_table WHERE email_adress = '$Email' and password='$Password'";
     $results = $conn->query($sql);
     if($result->num_rows>0){
         session_start();
