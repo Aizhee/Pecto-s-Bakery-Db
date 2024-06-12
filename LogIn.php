@@ -34,10 +34,6 @@ include 'connect.php';
                         <input type="password" placeholder="Password" name="password" id="password" required>
                     </div>
 
-                    <div class="remember-forgot">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-
                     <button type="submit" id="loginBtn">Login</button>
 
                     <div class="no-account">
