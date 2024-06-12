@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "bakery";
+$host = "sql111.infinityfree.com";
+$user = "if0_36714566";
+$pass = "c4p8uNAYpxev";
+$db = "if0_36714566_pectosdb";
 $conn = new mysqli($host, $user, $pass, $db);
 
 $smtp -> set_charset("utf8");
