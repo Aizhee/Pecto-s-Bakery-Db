@@ -1,0 +1,161 @@
+body {
+    background-color: white;
+    height: 90vh;
+    width: 190vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+}
+
+body > #AboutUs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    width: 100%;
+}
+
+#mission, #vision, #values, #history {
+    display: flex;
+    gap: 1px;
+    justify-content: center;
+    align-items: center;
+}
+
+#mission, #vission, #values{
+
+}
+
+#mission>div, 
+#vision>div, 
+#values>div, 
+#history>div {
+    width:50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide *{
+    display: none;
+}
+
+.slide {
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.mission-container, .vision-container, .values-container, .history-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.active *{
+    display: flex;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 300px;
+    height: 300px;
+    
+}
+
+#AboutUs-container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.864);
+}
+
+#button-container {
+    position: fixed;
+    z-index: 1;
+    display: inline;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+}
+
+#button {
+    position: relative;
+    width: 100%;
+}
+
+#button > button > .fa {
+    font-size: 40px;
+}
+
+#button > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#button > .left {
+    position: absolute;
+    left:0;
+}
+
+#button > .right {
+    position: absolute;
+    right:0;
+}
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1091px){
+    body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        padding: 0; /* Remove padding to occupy full width */
+        margin: 0; /* Remove margin to occupy full width */
+      }
+
+    body > #AboutUs-container {
+        width: 90%;
+        padding: 0;
+    }
+    
+    .slide{
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1053px){
+    #mission, #vision, #values {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    #history {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    #mission>div, #vision>div, #values>div, #history>div {
+        width: 70%;
+    }
+}

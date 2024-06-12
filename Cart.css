@@ -1,0 +1,116 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border-radius: 10px;
+  }
+
+  .product-details {
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: flex-start; /* Align items to the start of the flex container */
+  }
+
+  .product h3 {
+    margin: 0;
+  }
+
+  .product p {
+    margin-bottom: 10px;
+  }
+
+  form {
+    margin-top: auto; /* Push the form to the bottom */
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="number"] {
+    width: 50px;
+    padding: 5px;
+  }
+
+  button {
+    background-color: #432818;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  button:hover  {
+    background-color: #ffe6a7;  
+    color: #b75408;
+  }
+
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 562px) {
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove padding to occupy full width */
+    margin: 0; /* Remove margin to occupy full width */
+  }
+
+  header {
+    width: 100%; /* Make header occupy full width */
+  }
+
+  .product {
+    margin-left: 20px; /* Add margin to match padding of main */
+    margin-right: 20px; /* Add margin to match padding of main */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product img {
+    max-width: 100%; /* Make images occupy full width of parent container */
+    height: auto;
+  }
+
+  .product-details {
+    width: 100%; /* Make product details occupy full width */
+    text-align: center; /* Center align product details */
+  }
+}

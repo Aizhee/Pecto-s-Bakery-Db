@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('img/bread-bg.png');
+    background-size: cover;
+    background-position: center;
+    margin-top: 380px;
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #8B4513;
+    height: 60px;
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    width: 90px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+}
+
+.nav-links {
+    margin-right: -600px;
+}
+
+.icons {
+    list-style: none;
+    display: flex;
+}
+
+.icons a {
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social img {
+    width: 30px;
+    margin-right: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    background-color: #CD853F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #A0522D;
+}
+
+#welcome {
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-top: 380px;
+}
+
+.content h1 {
+    font-size: 36px;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.content h4 {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+/*About Us*/
+#AboutUs {
+    padding-top: 150px;
+    background-color: white;
+    display: flex;
+}
+
+.image img {
+    margin: 0 50px 150px 150px;
+    width: 500px;
+}
+
+.message {
+    margin-right:150px;
+}
+
+.content h1 {
+    font-size: 36px;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.content h4 {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+/*About Us*/
+#AboutUs {
+    padding-top: 150px;
+    background-color: white;
+    display: flex;
+}
+
+.image img {
+    margin: 0 50px 150px 150px;
+    width: 500px;
+}
+
+.message {
+    margin-right:150px;
+}
+
+/*Products*/
+#products {
+    background-color: white;
+}
+.row1, .row2, .row3, .row4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item1 img, .item2 img, .item3 img, .item4 img {
+    width: 250px; 
+    height: auto; 
+}
+
+.item1 {
+    margin-left: 100px;
+}
+
+.item4 {
+    margin-right: 100px;
+}
+
+/*Gallery*/
+#gallery {
+    background-color: white;
+}
+.header {
+    padding-top: 150px;
+}
+
+.categories {
+    display: flex;
+}
+
+.bread img {
+    width: 283px;
+}
+
+/*Footer*/
+#footer {
+    background-color: white;
+}
