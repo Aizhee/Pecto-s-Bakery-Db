@@ -21,6 +21,7 @@ if(isset($_POST['signUpBtn'])){
                         VALUES (NULL, '$FirstName', '$LirstName', '$Username', '$Email', '$Password', '2')";
 
             if($conn->$insertQuery==TRUE){
+                echo "New record created successfully";
                 header("location: LogIn.php");
             }else{
                 echo "Error".$conn->error;
