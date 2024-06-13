@@ -93,7 +93,7 @@ include 'connect.php';
             <div id="container-about">
                 <div class="image">
                     <video autoplay muted loop>
-                        <source src="video/1.mp4" type="video/mp4">
+                        <source src="https://pouch.jumpshare.com/preview/O1Q2VEuRSyryf0xRY2_kWVvn1qygjARgrPy4q2W3HF63wCh258VLJPguGmb_dJvvxYGt4ewyiSlBfEQd-TG7ZkQHLZri60m0BDgR2X6k58YoNL1PBjz9y6Hz7ZIGyUBnIKt5kHq_5486VEUVos4z626yjbN-I2pg_cnoHs_AmgI.mp4" type="video/mp4">
                     </video>
                 </div>
 
