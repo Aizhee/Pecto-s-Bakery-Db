@@ -401,7 +401,7 @@ include 'connect.php';
                 <h3>Location</h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4002.955696627939!2d121.551927338538!3d14.11438869432623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd53f5f956fd83%3A0xaf7ed935b3c90896!2sPecto&#39;s%20Bakery!5e0!3m2!1sen!2sph!4v1712140628207!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
-                <audio controls muted loop>
+                <audio controls loop autoplay>
                     <source src="music/1.mp3" type="audio/mpeg">
                 </audio>
             </div>
