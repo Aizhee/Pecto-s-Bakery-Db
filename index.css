@@ -259,8 +259,8 @@ button:hover, input[type="submit"]:hover {
     text-align: center;
 }
 
-.image img {
-    width:300px;
+.image video {
+    width:400px;
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
@@ -585,7 +585,9 @@ input[type="email"]::placeholder{
     color: #ffffffa1;
 }
 
-
+audio::-webkit-media-controls-enclosure {
+    background-color: transparent;
+}
 
 
 #copyright {
@@ -872,5 +874,4 @@ input[type="email"]::placeholder{
     .About{
         margin-bottom: 170px;
     }
-
 }
