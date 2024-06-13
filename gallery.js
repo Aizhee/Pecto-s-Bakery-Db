@@ -27,4 +27,18 @@ $(document).ready(function(){
             $('.image').hide().filter('.' + filter).show(400);
         }
     });
+
+    $(document).ready(function() {
+        $('.image').click(function(event) {
+            event.preventDefault();
+            var imgSrc = $(this).find('img').data('img');
+            $('#fullImage').attr('src', 'img/'+imgSrc);
+            $('#fullImageContainer').css('display', 'flex');
+        });
+
+        $('#fullImageContainer').click(function() {
+            $(this).hide();
+        });
+    });
 })
+
