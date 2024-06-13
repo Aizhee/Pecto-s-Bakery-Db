@@ -2,7 +2,6 @@
 
 session_start();
 include 'connect.php';
-include 'register.php';
 
 ?>
 
