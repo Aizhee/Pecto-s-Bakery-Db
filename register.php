@@ -17,8 +17,8 @@ if(isset($_POST['signUpBtn'])){
     if($results->num_rows>0){
         echo "Email address already exists!";
     }else{
-        $insertQuery = "INSERT INTO user_table(first_name, surname, username, email_adress, password)
-                        VALUES ('$FirstName', '$LirstName', '$Username', '$Email', '$Password'";
+        $insertQuery = "INSERT INTO user_table(first_name, surname, username, email_adress, password, user_type)
+                        VALUES ('$FirstName', '$LirstName', '$Username', '$Email', '$Password', '2')";
 
             if($conn->$insertQuery==TRUE){
                 header("location: LogIn.php");
