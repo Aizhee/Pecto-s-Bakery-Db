@@ -14,6 +14,8 @@ if(isset($_POST['signUpBtn'])){
     $chechEmail = "SELECT from user_table where email_adress = '$Email'";
     $results = $conn->query($checkEmail);
 
+    echo $results->num_rows;
+
     if($results->num_rows>0){
         echo "Email address already exists!";
     }else{
