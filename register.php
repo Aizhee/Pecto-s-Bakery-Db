@@ -41,10 +41,9 @@ if (isset($_POST['loginBtn'])) {
     if ($results->num_rows > 0) {
         $row = $results->fetch_assoc();
         $_SESSION['email'] = $row['email_adress']; // Corrected to match column name
-        //reload the parent window
-        echo "<script>window.opener.location.reload();</script>";
-        echo "<script>window.close();</script>";
-        
+        //reload the parent window "parent of the ifram this page is in"
+        echo '<script>window.parent.location.reload()</script>';
+
     } else {
         echo 'Invalid login credentials';
     }
