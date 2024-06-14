@@ -1,10 +1,8 @@
 <?php
-session_start();
 include 'connect.php';
 
-
-// Fetch favorite items for the current user
-$sql = "SELECT * FROM order_table WHERE user_id = {$_SESSION['user_id']}";
+// Fetch product details from the database
+$sql = "SELECT * FROM product_table";
 $results = $conn->query($sql);
 ?>
 
@@ -36,7 +34,7 @@ $results = $conn->query($sql);
                       <div class="product-details">
                           <h3><?php echo $row['product_name']; ?></h3>
                           <p><?php echo $row['type']; ?></p>
-                          <p><?php echo $row['price']; ?></p>
+                          <p>$<?php echo number_format($row['price'], 2); ?></p>
                           <form action="add_to_cart.php" method="post">
                               <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
                               <label for="quantity-<?php echo $row['product_id']; ?>">Quantity:</label>
