@@ -2,7 +2,7 @@
 include 'connect.php';
 
 // Fetch product details from the database
-$sql = "SELECT * FROM product_table";
+$sql = "SELECT * FROM order_table INNER JOIN product_table ON order_table.product_id = product_table.product_id WHERE user_id = 1";
 $results = $conn->query($sql);
 ?>
 
