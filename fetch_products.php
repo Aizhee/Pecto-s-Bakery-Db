@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include 'connection.php';
+include 'connect.php';
 
 // SQL query to fetch product data
 $sql = "SELECT product_name, photo, price FROM product_table";
