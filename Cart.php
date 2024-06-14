@@ -1,3 +1,11 @@
+<?php
+include 'connect.php';
+
+// Fetch product details from the database
+$sql = "SELECT * FROM product_table";
+$results = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,22 +25,31 @@
     <body>
         <main>
           <h2>Shopping Cart</h2>
-      
-          <div class="product">
-            <img src="img/Egg Pie.png" alt="Product Image">
-            
-            <div class="product-details">
-                <h3>Special Egg Pie</h3>
-                <p>A delicious egg pie made with flaky pastry and creamy egg custard filling.</p>
-                <p>$2.50</p>
-                <form action="add_to_cart.php" method="post">
-                <input type="hidden" name="product_id" value="1">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1">
-                </form>
-            </div>
-          </div>
+
+          <?php if ($results->num_rows > 0) : ?>
+              <?php while ($row = $results->fetch_assoc()) : ?>
+                  <div class="product">
+                      <img src="img/<?php echo $row['photo']; ?>" alt="Product Image">
+                      
+                      <div class="product-details">
+                          <h3><?php echo $row['product_name']; ?></h3>
+                          <p><?php echo $row['type']; ?></p>
+                          <p>$<?php echo number_format($row['price'], 2); ?></p>
+                          <form action="add_to_cart.php" method="post">
+                              <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                              <label for="quantity-<?php echo $row['product_id']; ?>">Quantity:</label>
+                              <input type="number" id="quantity-<?php echo $row['product_id']; ?>" name="quantity" min="1" value="1">
+                              <button type="submit">Add to Cart</button>
+                          </form>
+                      </div>
+                  </div>
+              <?php endwhile; ?>
+          <?php else : ?>
+              <p>No products available.</p>
+          <?php endif; ?>
+
+          <?php $conn->close(); ?>
         </main>
-        <button type="submit">Proceed to Check-Out</button>
+        <button onclick="window.location.href='checkout.php'">Proceed to Check-Out</button>
     </body>
 </html>
