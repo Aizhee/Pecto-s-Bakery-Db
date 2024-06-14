@@ -14,16 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantity = $_POST['quantity'];
 
     // Check if the product is already in the user's cart
-    $checkCart = "SELECT * FROM product_table WHERE user_id = $user_id AND product_id = $product_id";
+    $checkCart = "SELECT * FROM likes_table WHERE user_id = $user_id AND product_id = $product_id";
     $result = $conn->query($checkCart);
 
     if ($result->num_rows > 0) {
         // Update the quantity if the product is already in the cart
-        $updateCart = "UPDATE cart SET quantity = quantity + $quantity WHERE user_id = $user_id AND product_id = $product_id";
+        $updateCart = "UPDATE order_table SET quantity = quantity + $quantity WHERE user_id = $user_id AND product_id = $product_id";
         $conn->query($updateCart);
     } else {
         // Insert new product into the cart
-        $insertCart = "INSERT INTO cart (user_id, product_id, quantity) VALUES ($user_id, $product_id, $quantity)";
+        $insertCart = "INSERT INTO order_table (user_id, product_id, quantity) VALUES ($user_id, $product_id, $quantity)";
         $conn->query($insertCart);
     }
 
