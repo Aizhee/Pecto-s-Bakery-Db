@@ -41,9 +41,8 @@ if (isset($_POST['loginBtn'])) {
     if ($results->num_rows > 0) {
         $row = $results->fetch_assoc();
         $_SESSION['email'] = $row['email_adress']; // Corrected to match column name
-        echo 'success';
     } else {
-        echo 'Invalid email or password!';
+        echo 'Invalid login credentials';
     }
     exit();
 }
