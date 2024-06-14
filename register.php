@@ -14,7 +14,8 @@ if (isset($_POST['signUpBtn'])) {
     $results = $conn->query($checkEmail);
 
     if ($results->num_rows > 0) {
-        echo "Email address already exists!";
+        //using jquery to display error message
+        echo "<script> alert('Email already exists!')</script>";
     } else {
         // Corrected SQL query to insert new user
         $insertQuery = "INSERT INTO user_table (user_id, first_name, surname, username, email_adress, password, user_type)
@@ -25,7 +26,8 @@ if (isset($_POST['signUpBtn'])) {
             header("Location: LogIn.php");
             exit(); // Add exit after header redirection
         } else {
-            echo "Error: " . $conn->error;
+            // using jquery to display error message
+            echo "<script> alert('Error: " . $conn->error . "')</script>";
         }
     }
 }
@@ -34,10 +36,12 @@ if (isset($_POST['loginBtn'])) {
     $Email = $_POST['email'];
     $Password = $_POST['password']; // Corrected to use the correct field name
     $Password = md5($Password);
-
     // Corrected SQL query to verify login credentials
     $sql = "SELECT * FROM user_table WHERE email_adress = '$Email' AND password = '$Password'";
     $results = $conn->query($sql);
+
+    echo $results->num_rows;
+    echo $Password;
 
     if ($results->num_rows > 0) {
         session_start();
