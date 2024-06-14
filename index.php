@@ -114,7 +114,7 @@ include 'connect.php';
         </div>
 
         <div id="products">
-            <div class="product-header">
+            <div class="Specialties">
                 <center><h2><i>OUR SPECIALTIES</i></h2>
                 <h4>Fresh Bakery Items with the Finest Ingredients</h4></center>
             </div>

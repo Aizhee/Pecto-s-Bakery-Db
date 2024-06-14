@@ -5,7 +5,7 @@ $(document).ready(function() {
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-            var productList = $('#product-list');
+            var productList = $('#Specialties');
             $.each(data, function(index, product) {
                 var productItem = `
                     <li>
