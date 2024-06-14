@@ -2,29 +2,6 @@ $(document).ready(function(){
     var Gallery = $('#pop-up-container');
     var Iframe = $('#Iframe');
 
-    //hide popup container that has LogIn.php if the user is logged in
-    Iframe.on('load', function(){
-        var IframeContent = Iframe.contents().find('body').html();
-        //check if the url is LogIn.php
-        if(IframeContent.includes('LogIn.php')){
-            //detect whethere a user is logged in or not
-            $.ajax({
-                url: 'check_login.php',
-                type: 'GET',
-                dataType: 'json',
-                success: function(response) {
-                    if (response.logged_in) {
-                        Gallery.fadeOut();
-                        $("body").css("overflow", "auto")
-                    }
-                },
-                error: function(error) {
-                    console.error('Error:', error);
-                }
-            });
-        }
-    });
-
     $('#loginBtn').on('click', function(){
         Gallery.fadeIn();
         Iframe.attr("src", "LogIn.php");
