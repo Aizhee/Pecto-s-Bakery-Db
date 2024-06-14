@@ -42,11 +42,13 @@ if (isset($_POST['loginBtn'])) {
     if ($results->num_rows > 0) {
         session_start();
         $row = $results->fetch_assoc();
+        // Store user ID in session
         $_SESSION['email'] = $row['email_adress']; // Corrected to match column name
         header("Location: index.php");
         exit(); // Add exit after header redirection
     } else {
-        echo "Incorrect Email or Password";
+        // using jquery to display error message
+        echo "<script> alert('Invalid email or password!')</script>";
     }
 }
 ?>
