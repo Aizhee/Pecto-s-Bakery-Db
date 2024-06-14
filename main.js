@@ -144,7 +144,7 @@ $(document).ready(function(){
     })
 
     $('#Contact-us').on('click', function(){
-        $('body, php').animate({
+        $('body, html').animate({
             scrollTop: $('#footer').offset().top - 160
         }, 600);
     })
