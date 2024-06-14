@@ -114,13 +114,13 @@ include 'connect.php';
         </div>
 
         <div id="products">
-            <div class="Specialties">
+            <div class="product-header">
                 <center><h2><i>OUR SPECIALTIES</i></h2>
                 <h4>Fresh Bakery Items with the Finest Ingredients</h4></center>
             </div>
 
             <div id="items">
-                <ul id="product-list">
+                <ul class="Specialties">
                     <!-- Products will be loaded here dynamically using AJAX-->
                 </ul>
             </div>
