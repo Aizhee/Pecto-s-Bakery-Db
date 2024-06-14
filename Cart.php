@@ -39,7 +39,6 @@ $results = $conn->query($sql);
                               <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
                               <label for="quantity-<?php echo $row['product_id']; ?>">Quantity:</label>
                               <input type="number" id="quantity-<?php echo $row['product_id']; ?>" name="quantity" min="1" value="1">
-                              <button type="submit">Add to Cart</button>
                           </form>
                       </div>
                   </div>
