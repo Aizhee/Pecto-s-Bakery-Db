@@ -120,25 +120,25 @@ $(document).ready(function(){
     });
 
     $('#Home').on('click', function(){
-        $('body, php').animate({
+        $('body, html').animate({
             scrollTop: $('body').offset().top
         }, 600);
     })
 
     $('#About-us').on('click', function(){
-        $('body, php').animate({
+        $('body, html').animate({
             scrollTop: $('#container-about').offset().top - 160
         }, 600);
     })
 
     $('#Product').on('click', function(){
-        $('body, php').animate({
+        $('body, html').animate({
             scrollTop: $('#products').offset().top - 120
         }, 600);
     })
 
     $('#Gallery').on('click', function(){
-        $('body, php').animate({
+        $('body, html').animate({
             scrollTop: $('#gallery').offset().top - 120
         }, 600);
     })
