@@ -11,7 +11,7 @@ $(document).ready(function() {
                 var productItem = `
                     <li>
                         <img src="img/${product.photo}" alt="${product.product_name}">
-                        <h3>${product_name}</h3>
+                        <h3>${product.product_name}</h3>
                         <h4>${product.price}</h4>
                         <div class="buttons">
                             <button>
