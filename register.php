@@ -41,6 +41,9 @@ if (isset($_POST['loginBtn'])) {
     if ($results->num_rows > 0) {
         $row = $results->fetch_assoc();
         $_SESSION['email'] = $row['email_adress']; // Corrected to match column name
+        $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['user_type'] = $row['user_type'];
+        
         //reload the parent window "parent of the ifram this page is in"
         echo '<script>window.parent.location.reload()</script>';
 
