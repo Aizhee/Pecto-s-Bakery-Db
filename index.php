@@ -215,7 +215,6 @@ include 'connect.php';
         <div id="copyright">
             <p>Copyright © 2023-2024 Trina Alyssa Mente - CpE06 Online Technologies. All Rights Reserved</p>
         </div>
-        <script src="ajax.js"></script>
     </body>
 </html>
 
