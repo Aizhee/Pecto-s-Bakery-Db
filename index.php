@@ -183,7 +183,7 @@ include 'connect.php';
                     <input type="email" id="email" name="email" placeholder="example@example.com" required>
                     <input type="submit" value="Subscribe">
                 </form>
-                    <div class="user-bar">
+                    <div class="login-signUp">
                         <!-- Show login/signup button if not logged in -->
                         <?php if (isset($_SESSION['email'])): ?>
                             <div class="user-info">
