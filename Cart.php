@@ -8,14 +8,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
-
-// Fetch cart items for the current user
-$sql = "SELECT c.quantity, p.product_id, p.product_name, p.type, p.price, p.photo 
-        FROM cart c 
-        JOIN product_table p ON c.product_id = p.product_id 
-        WHERE c.user_id = $user_id";
-$results = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
