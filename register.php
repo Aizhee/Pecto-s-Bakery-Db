@@ -41,6 +41,10 @@ if (isset($_POST['loginBtn'])) {
     if ($results->num_rows > 0) {
         $row = $results->fetch_assoc();
         $_SESSION['email'] = $row['email_adress']; // Corrected to match column name
+        //reload the parent window
+        echo "<script>window.opener.location.reload();</script>";
+        echo "<script>window.close();</script>";
+        
     } else {
         echo 'Invalid login credentials';
     }
