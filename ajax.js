@@ -6,6 +6,7 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data) {
             var productList = $('#product-list');
+            console.log('Products:', data);
             $.each(data, function(index, product) {
                 var productItem = `
                     <li>
