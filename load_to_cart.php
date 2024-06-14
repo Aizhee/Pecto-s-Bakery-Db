@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantity = $_POST['quantity'];
 
     // Check if the product is already in the user's cart
-    $checkCart = "SELECT * FROM cart WHERE user_id = $user_id AND product_id = $product_id";
+    $checkCart = "SELECT * FROM product_table WHERE user_id = $user_id AND product_id = $product_id";
     $result = $conn->query($checkCart);
 
     if ($result->num_rows > 0) {
