@@ -34,7 +34,7 @@ $results = $conn->query($sql);
                       <div class="product-details">
                           <h3><?php echo $row['product_name']; ?></h3>
                           <p><?php echo $row['type']; ?></p>
-                          <p>$<?php echo number_format($row['price'], 2); ?></p>
+                          <p>$<?php echo $row['price']; ?></p>
                           <form action="add_to_cart.php" method="post">
                               <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
                               <label for="quantity-<?php echo $row['product_id']; ?>">Quantity:</label>
