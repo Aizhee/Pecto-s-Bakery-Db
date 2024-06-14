@@ -183,12 +183,20 @@ include 'connect.php';
                     <input type="email" id="email" name="email" placeholder="example@example.com" required>
                     <input type="submit" value="Subscribe">
                 </form>
-
-                <div class="login-signUp">
-                    <input type="submit" value="Login" id="loginBtn">
-                    <input type="submit" value="Sign-up" id="signUpBtn">
-                </div>
-            </div>
+                <!-- Show login/signup button if not logged in -->
+                <?php if (isset($_SESSION['email'])): ?>
+                    <div class="user-info">
+                        <p>Welcome, <?php echo $_SESSION['email']; ?>!</p>
+                        <form method="post" action="logout.php">
+                            <button type="submit" name="logoutBtn">Logout</button>
+                        </form>
+                    </div>
+                    <?php else: ?>
+                    <div class="login-signUp">
+                        <input type="submit" value="Login" id="loginBtn">
+                        <input type="submit" value="Sign-up" id="signUpBtn">
+                    </div>
+                <?php endif; ?>
 
             <div class="map">
                 <h3>Location</h3>

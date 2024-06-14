@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+session_start();
 
 if (isset($_POST['signUpBtn'])) {
     $FirstName = $_POST['firstname'];
@@ -7,52 +8,43 @@ if (isset($_POST['signUpBtn'])) {
     $Username = $_POST['username'];
     $Email = $_POST['email'];
     $Password = $_POST['createPassword'];
-    $Password = md5($Password);
+    $PasswordEnc = md5($Password);
 
     // Corrected SQL query to check for existing email
     $checkEmail = "SELECT * FROM user_table WHERE email_adress = '$Email'";
     $results = $conn->query($checkEmail);
 
     if ($results->num_rows > 0) {
-        //using jquery to display error message
-        echo "<script> alert('Email already exists!')</script>";
+        echo 'Email already exists!';
     } else {
         // Corrected SQL query to insert new user
         $insertQuery = "INSERT INTO user_table (user_id, first_name, surname, username, email_adress, password, user_type)
-                        VALUES (NULL, '$FirstName', '$LastName', '$Username', '$Email', '$Password', '2')";
+                        VALUES (NULL, '$FirstName', '$LastName', '$Username', '$Email', '$PasswordEnc', '2')";
 
         if ($conn->query($insertQuery) === TRUE) {
-            echo "New record created successfully";
-            header("Location: LogIn.php");
-            exit(); // Add exit after header redirection
+            echo 'success';
         } else {
-            // using jquery to display error message
-            echo "<script> alert('Error: " . $conn->error . "')</script>";
+            echo 'Error: ' . $conn->error;
         }
     }
+    exit();
 }
 
 if (isset($_POST['loginBtn'])) {
     $Email = $_POST['email'];
     $Password = $_POST['password']; // Corrected to use the correct field name
-    $Password = md5($Password);
+    $PasswordEnc = md5($Password);
     // Corrected SQL query to verify login credentials
-    $sql = "SELECT * FROM user_table WHERE email_adress = '$Email' AND password = '$Password'";
+    $sql = "SELECT * FROM user_table WHERE email_adress = '$Email' AND password = '$PasswordEnc'";
     $results = $conn->query($sql);
 
-    echo $results->num_rows;
-    echo $Password;
-
     if ($results->num_rows > 0) {
-        session_start();
         $row = $results->fetch_assoc();
-        // Store user ID in session
         $_SESSION['email'] = $row['email_adress']; // Corrected to match column name
-        header("Location: index.php");
-        exit(); // Add exit after header redirection
+        echo 'success';
     } else {
-        // using jquery to display error message
-        echo "<script> alert('Invalid email or password!')</script>";
+        echo 'Invalid email or password!';
     }
+    exit();
 }
 ?>
