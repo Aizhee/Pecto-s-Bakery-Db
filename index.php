@@ -207,12 +207,11 @@ include 'connect.php';
                         <source src="music/1.mp3" type="audio/mpeg">
                     </audio>
                 </div>
-            
         
-        </div>
 
-        <div id="copyright">
-            <p>Copyright © 2023-2024 Trina Alyssa Mente & Aizhar Jamilano - CpE06 Online Technologies. All Rights Reserved</p>
+            <div id="copyright">
+                <p>Copyright © 2023-2024 Trina Alyssa Mente & Aizhar Jamilano - CpE06 Online Technologies. All Rights Reserved</p>
+            </div>
         </div>
         <script src="ajax.js"></script>
     </body>
