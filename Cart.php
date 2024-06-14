@@ -4,7 +4,7 @@ include 'connect.php';
 
 
 // Fetch favorite items for the current user
-$sql = "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM favorites WHERE user_id = ?)";
+$sql = "SELECT * FROM order_table WHERE user_id = {$_SESSION['user_id']}";
 $results = $conn->query($sql);
 ?>
 
