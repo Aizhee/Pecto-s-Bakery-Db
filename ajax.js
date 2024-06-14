@@ -11,7 +11,7 @@ $(document).ready(function() {
                     <li>
                         <img src="img/${product.photo}" alt="${product.product_name}">
                         <h3>${product.product_name}</h3>
-                        <h4>${product.price}</h4>
+                        <h4>₱${product.price}</h4>
                         <div class="buttons">
                             <button class="add-to-cart" data-product-id="${product.product_id}">
                                 <i class="fa-solid fa-cart-shopping"></i>
