@@ -1,22 +1,4 @@
 $(document).ready(function() {
-     //detect whethere a user is logged in or not
-    $.ajax({
-        url: 'check_login.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function(response) {
-            if (response.logged_in) {
-                $('.login').hide();
-                $('.logout').show();
-            } else {
-                $('.login').show();
-                $('.logout').hide();
-            }
-        },
-        error: function(error) {
-            console.error('Error:', error);
-        }
-    });
 
     // AJAX request to fetch products
     $.ajax({

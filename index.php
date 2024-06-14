@@ -186,7 +186,7 @@ include 'connect.php';
 
                 <!-- Show login/signup button if not logged in -->
                 <?php if (isset($_SESSION['email'])): ?>
-                            <div class="login-signUp"">
+                            <div class="login-signUp">
                                 <p>Welcome, <?php echo $_SESSION['email']; ?>!</p>
                                 <form method="post" action="logout.php">
                                     <button type="submit" name="logoutBtn">Logout</button>
