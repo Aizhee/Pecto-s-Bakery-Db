@@ -9,7 +9,7 @@ $(document).ready(function() {
             $.each(data, function(index, product) {
                 var productItem = `
                     <li>
-                        <img src="img/${product.image}" alt="${product.name}">
+                        <img src="img/${product.photo}" alt="${product.product_name}">
                         <h3>${product.name}</h3>
                         <h4>${product.price}</h4>
                         <div class="buttons">
