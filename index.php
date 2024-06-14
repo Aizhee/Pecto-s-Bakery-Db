@@ -184,10 +184,20 @@ include 'connect.php';
                     <input type="submit" value="Subscribe">
                 </form>
 
-                <div class="login-signUp">
-                    <input type="submit" value="Login" id="loginBtn">
-                    <input type="submit" value="Sign-up" id="signUpBtn">
-                </div>
+                <!-- Show login/signup button if not logged in -->
+                <?php if (isset($_SESSION['email'])): ?>
+                            <div class="login-signUp"">
+                                <p>Welcome, <?php echo $_SESSION['email']; ?>!</p>
+                                <form method="post" action="logout.php">
+                                    <button type="submit" name="logoutBtn">Logout</button>
+                                </form>
+                            </div>
+                            <?php else: ?>
+                            <div class="login-signUp">
+                                <input type="submit" value="Login" id="loginBtn">
+                                <input type="submit" value="Sign-up" id="signUpBtn">
+                            </div>
+                <?php endif; ?>
             </div>
 
             <div class="map">
@@ -205,7 +215,6 @@ include 'connect.php';
         <div id="copyright">
             <p>Copyright © 2023-2024 Trina Alyssa Mente - CpE06 Online Technologies. All Rights Reserved</p>
         </div>
-        
         <script src="ajax.js"></script>
     </body>
 </html>
