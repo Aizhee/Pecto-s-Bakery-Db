@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Fetch favorite items for the current user
-$sql = "SELECT * FROM products JOIN favorites ON products.product_id = favorites.product_id WHERE favorites.user_id = $user_id";
+$sql = "SELECT * FROM products JOIN likes_table ON products.product_id = likes_table.product_id WHERE likes_table.user_id = $use";
 $results = $conn->query($sql);
 ?>
 
