@@ -1,8 +1,13 @@
 <?php
 include 'connect.php';
 
-// Fetch product details from the database
-$sql = "SELECT * FROM product_table";
+$user_id = $_SESSION['user_id'];
+
+// Fetch favorite items for the current user
+$sql = "SELECT p.product_id, p.product_name, p.type, p.price, p.photo 
+        FROM favorites f 
+        JOIN product_table p ON f.product_id = p.product_id 
+        WHERE f.user_id = $user_id";
 $results = $conn->query($sql);
 ?>
 
