@@ -22,7 +22,7 @@ if (isset($_POST['signUpBtn'])) {
                         VALUES (NULL, '$FirstName', '$LastName', '$Username', '$Email', '$PasswordEnc', '2')";
 
         if ($conn->query($insertQuery) === TRUE) {
-            echo 'success';
+            header('Location: LogIn.php')
         } else {
             echo 'Error: ' . $conn->error;
         }
