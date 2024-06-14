@@ -2,16 +2,9 @@
 session_start();
 include 'connect.php';
 
-if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if user is not logged in
-    header("Location: LogIn.php");
-    exit();
-}
-
-$user_id = $_SESSION['user_id'];
 
 // Fetch favorite items for the current user
-$sql = "SELECT * FROM order_table WHERE user_id = $user_id";
+$sql = "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM favorites WHERE user_id = ?)";
 $results = $conn->query($sql);
 ?>
 
